@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C Learning Platform - Progress</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Redirect if not logged in -->
+    <script>
+      if (localStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "login.html";
+      }
+    </script>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="home.html">C Learning Platform</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <!-- Tutorials Link -->
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Tutorials</a>
+            </li>
+            <!-- Progress Link (active) -->
+            <li class="nav-item">
+              <a class="nav-link active" href="progress.html">Progress</a>
+            </li>
+            <!-- Profile Link with Profile Picture -->
+            <li class="nav-item" id="profileLink" style="display: none">
+              <a class="nav-link" href="profile.html">
+                <img
+                  src=""
+                  alt="Profile"
+                  id="profilePicNav"
+                  class="rounded-circle"
+                  style="height: 40px; width: 40px"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+      <h2>Your Progress</h2>
+      <p class="text-muted">
+        Track your completed modules here. (Demo only, stored in localStorage)
+      </p>
+
+      <!-- Progress Bar -->
+      <div class="progress mb-4">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          style="width: 0%"
+          id="progressBar"
+        >
+          0%
+        </div>
+      </div>
+
+      <!-- List of modules with checkboxes -->
+      <ul class="list-group" id="moduleList">
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            class="form-check-input me-2 module-checkbox"
+            data-module="intro"
+          />
+          Introduction to C Programming
+        </li>
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            class="form-check-input me-2 module-checkbox"
+            data-module="io"
+          />
+          Input / Output
+        </li>
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            class="form-check-input me-2 module-checkbox"
+            data-module="operators"
+          />
+          Operator Operand and Arithmetic
+        </li>
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            class="form-check-input me-2 module-checkbox"
+            data-module="selection"
+          />
+          Selection
+        </li>
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            class="form-check-input me-2 module-checkbox"
+            data-module="repetition"
+          />
+          Repetition
+        </li>
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            class="form-check-input me-2 module-checkbox"
+            data-module="pointers_arrays"
+          />
+          Pointers and Arrays
+        </li>
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            class="form-check-input me-2 module-checkbox"
+            data-module="functions_recursion"
+          />
+          Function and Recursion
+        </li>
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            class="form-check-input me-2 module-checkbox"
+            data-module="structures_union"
+          />
+          Structures and Union
+        </li>
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            class="form-check-input me-2 module-checkbox"
+            data-module="memory_allocation"
+          />
+          Memory Allocation
+        </li>
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            class="form-check-input me-2 module-checkbox"
+            data-module="file_processing"
+          />
+          File Processing
+        </li>
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            class="form-check-input me-2 module-checkbox"
+            data-module="sorting"
+          />
+          Sorting
+        </li>
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            class="form-check-input me-2 module-checkbox"
+            data-module="searching"
+          />
+          Searching
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // 1) Display the user's profile pic in the navbar
+      const storedPic = localStorage.getItem("profilePic");
+      const profilePicNav = document.getElementById("profilePicNav");
+      if (!storedPic || storedPic.trim() === "") {
+        // Default gray silhouette
+        profilePicNav.src =
+          "https://cdn-icons-png.flaticon.com/512/847/847969.png";
+      } else {
+        profilePicNav.src = storedPic;
+      }
+      // Reveal the profile link
+      document.getElementById("profileLink").style.display = "block";
+
+      // 2) Progress tracking logic
+      document.addEventListener("DOMContentLoaded", initProgressTracker);
+
+      function initProgressTracker() {
+        // Load saved progress data from localStorage
+        const savedProgress =
+          JSON.parse(localStorage.getItem("moduleProgress")) || {};
+
+        const checkboxes = document.querySelectorAll(".module-checkbox");
+        checkboxes.forEach((checkbox) => {
+          const moduleId = checkbox.getAttribute("data-module");
+          // If previously marked completed, check the box
+          if (savedProgress[moduleId]) {
+            checkbox.checked = true;
+          }
+          // Update progress whenever a checkbox changes
+          checkbox.addEventListener("change", updateProgress);
+        });
+
+        // Update the progress bar on initial load
+        updateProgress();
+      }
+
+      function updateProgress() {
+        const checkboxes = document.querySelectorAll(".module-checkbox");
+        let completed = 0;
+        const total = checkboxes.length;
+        const progressData = {};
+
+        checkboxes.forEach((checkbox) => {
+          const moduleId = checkbox.getAttribute("data-module");
+          if (checkbox.checked) {
+            completed++;
+            progressData[moduleId] = true;
+          } else {
+            progressData[moduleId] = false;
+          }
+        });
+
+        // Save progress to localStorage
+        localStorage.setItem("moduleProgress", JSON.stringify(progressData));
+
+        // Update progress bar
+        const percent = (completed / total) * 100;
+        const progressBar = document.getElementById("progressBar");
+        progressBar.style.width = percent + "%";
+        progressBar.textContent = Math.round(percent) + "%";
+      }
+    </script>
+  </body>
+</html>

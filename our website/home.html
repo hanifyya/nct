@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C Learning Platform - Tutorials</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="home.html">CTinker.</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <!-- Tutorials (always visible) -->
+            <li class="nav-item">
+              <a class="nav-link active" href="home.html">Modules</a>
+            </li>
+            <!-- Progress link (only if logged in) -->
+            <li class="nav-item" id="progressLink" style="display: none">
+              <a class="nav-link" href="progress.html">Progress</a>
+            </li>
+            <!-- Login link (only if NOT logged in) -->
+            <li class="nav-item" id="loginLink" style="display: none">
+              <a class="nav-link" href="login.html">Login / Register</a>
+            </li>
+            <!-- Profile link as a profile picture (only if logged in) -->
+            <li class="nav-item" id="profileLink" style="display: none">
+              <a class="nav-link" href="profile.html">
+                <img
+                  src=""
+                  alt="Profile"
+                  id="profilePicNav"
+                  class="rounded-circle"
+                  style="height: 40px; width: 40px"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content with 12 modules -->
+    <div class="container my-5">
+      <h2 class="mb-4">Modules</h2>
+      <div class="row">
+        <!-- 1. Introduction to C Programming -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Introduction to C Programming</h5>
+              <p class="card-text">
+                Get an overview of the C language, its history, and core
+                features.
+              </p>
+              <a href="modules/intro.html" class="btn btn-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Input / Output -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Input / Output</h5>
+              <p class="card-text">
+                Learn how to handle standard input and output operations in C.
+              </p>
+              <a href="modules/io.html" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Operator Operand and Arithmetic -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Operator Operand and Arithmetic</h5>
+              <p class="card-text">
+                Understand operators, operands, and how arithmetic expressions
+                work in C.
+              </p>
+              <a href="modules/operators.html" class="btn btn-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Selection -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Selection</h5>
+              <p class="card-text">
+                Explore conditional statements (if-else, switch) to control
+                program flow.
+              </p>
+              <a href="modules/selection.html" class="btn btn-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Repetition -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Repetition</h5>
+              <p class="card-text">
+                Master loops (for, while, do-while) for repetitive tasks.
+              </p>
+              <a href="modules/repetition.html" class="btn btn-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Pointers and Arrays -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Pointers and Arrays</h5>
+              <p class="card-text">
+                Dive into memory addresses, pointers, and handling arrays in C.
+              </p>
+              <a href="modules/pointers_arrays.html" class="btn btn-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Function and Recursion -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Function and Recursion</h5>
+              <p class="card-text">
+                Write modular code with functions and solve problems using
+                recursion.
+              </p>
+              <a href="modules/functions_recursion.html" class="btn btn-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Structures and Union -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Structures and Union</h5>
+              <p class="card-text">
+                Organize complex data with structures and unions in C.
+              </p>
+              <a href="modules/structures_union.html" class="btn btn-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Memory Allocation -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Memory Allocation</h5>
+              <p class="card-text">
+                Manage memory dynamically with malloc, calloc, realloc, and
+                free.
+              </p>
+              <a href="modules/memory_allocation.html" class="btn btn-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. File Processing -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">File Processing</h5>
+              <p class="card-text">
+                Read from and write to files for data storage and retrieval.
+              </p>
+              <a href="modules/file_processing.html" class="btn btn-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Sorting -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Sorting</h5>
+              <p class="card-text">
+                Implement various sorting algorithms to organize data
+                efficiently.
+              </p>
+              <a href="modules/sorting.html" class="btn btn-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. Searching -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Searching</h5>
+              <p class="card-text">
+                Use linear and binary search to find data in arrays and lists.
+              </p>
+              <a href="modules/searching.html" class="btn btn-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Conditional Navbar Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+        const progressLink = document.getElementById("progressLink");
+        const loginLink = document.getElementById("loginLink");
+        const profileLink = document.getElementById("profileLink");
+        const profilePicNav = document.getElementById("profilePicNav");
+
+        if (isLoggedIn) {
+          // Show progress & profile, hide login
+          progressLink.style.display = "block";
+          profileLink.style.display = "block";
+          loginLink.style.display = "none";
+
+          // Use default silhouette if no custom pic
+          const storedPic = localStorage.getItem("profilePic");
+          if (!storedPic || storedPic.trim() === "") {
+            profilePicNav.src =
+              "https://cdn-icons-png.flaticon.com/512/847/847969.png";
+          } else {
+            profilePicNav.src = storedPic;
+          }
+        } else {
+          // Show login, hide progress & profile
+          progressLink.style.display = "none";
+          profileLink.style.display = "none";
+          loginLink.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
