@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to C Programming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+      }
+      .code-block {
+        background: #2d2d2d;
+        border-radius: 10px;
+        padding: 1rem;
+        color: #f8f8f2;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="../home.html">CTinker.</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="../home.html">Modules</a></li>
+            <li class="nav-item" id="progressLink" style="display: none;"><a class="nav-link" href="../progress.html">Progress</a></li>
+            <li class="nav-item" id="loginLink" style="display: none;"><a class="nav-link" href="../login.html">Login</a></li>
+            <li class="nav-item" id="profileLink" style="display: none;">
+              <a class="nav-link" href="../profile.html">
+                <img src="" alt="Profile" id="profilePicNav" class="rounded-circle" style="height: 40px; width: 40px" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container my-5">
+      <h2 class="mb-4">Introduction to C Programming</h2>
+      <p>
+        C is a powerful general-purpose programming language developed in the early 1970s. It's fast, portable, and available on all platforms. Learning C provides a strong foundation in programming.
+      </p>
+      <h4>Sample Hello World Program</h4>
+      <div class="code-block">
+        <pre><code class="language-c">#include <stdio.h>
+
+int main() {
+    printf("Hello, world!\n");
+    return 0;
+}</code></pre>
+      </div>
+
+      <button class="btn btn-outline-info mt-4" type="button" data-bs-toggle="collapse" data-bs-target="#tips">View Learning Tips</button>
+      <div class="collapse mt-3" id="tips">
+        <div class="card card-body">
+          Start by practicing small C programs. Understanding how memory and variables work is key to mastering C.
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+        const progressLink = document.getElementById("progressLink");
+        const loginLink = document.getElementById("loginLink");
+        const profileLink = document.getElementById("profileLink");
+        const profilePicNav = document.getElementById("profilePicNav");
+
+        if (isLoggedIn) {
+          progressLink.style.display = "block";
+          profileLink.style.display = "block";
+          loginLink.style.display = "none";
+
+          const storedPic = localStorage.getItem("profilePic");
+          if (!storedPic || storedPic.trim() === "") {
+            profilePicNav.src = "https://cdn-icons-png.flaticon.com/512/847/847969.png";
+          } else {
+            profilePicNav.src = storedPic;
+          }
+        } else {
+          progressLink.style.display = "none";
+          profileLink.style.display = "none";
+          loginLink.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
