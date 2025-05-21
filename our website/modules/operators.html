@@ -1,95 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Operator Operand and Arithmetic</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
-  <style>
-    body {
-      background-color: #f8f9fa;
-      font-family: Arial, sans-serif;
-    }
-    .code-block {
-      background: #2d2d2d;
-      border-radius: 10px;
-      padding: 1rem;
-      color: #f8f8f2;
-      overflow-x: auto;
-    }
-  </style>
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="../home.html">CTinker.</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator Operand and Arithmetic</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+      }
+      .code-block {
+        background: #2d2d2d;
+        border-radius: 10px;
+        padding: 1rem;
+        color: #f8f8f2;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="../home.html">CTinker.</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../home.html">Modules</a>
+            </li>
+            <li class="nav-item" id="progressLink" style="display: none">
+              <a class="nav-link" href="../progress.html">Progress</a>
+            </li>
+            <li class="nav-item" id="loginLink" style="display: none">
+              <a class="nav-link" href="../login.html">Login / Register</a>
+            </li>
+            <li class="nav-item" id="profileLink" style="display: none">
+              <a class="nav-link" href="../profile.html">
+                <img
+                  src=""
+                  alt="Profile"
+                  id="profilePicNav"
+                  class="rounded-circle"
+                  style="height: 40px; width: 40px"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <h2 class="mb-4">Operators, Operands, and Arithmetic in C</h2>
+      <p>
+        Operators in C are special symbols used to perform operations on
+        variables and values (called operands). The most basic are
+        <strong>arithmetic operators</strong>, which perform common mathematical
+        operations.
+      </p>
+
+      <h4 class="mt-4">1. Addition (<code>+</code>)</h4>
+      <p>The <code>+</code> operator adds two values together.</p>
+      <div class="code-block">
+        <pre><code class="language-c">int a = 5, b = 3;
+int sum = a + b;
+printf("Sum: %d\n", sum); // Output: Sum: 8</code></pre>
+      </div>
+
+      <h4 class="mt-4">2. Subtraction (<code>-</code>)</h4>
+      <p>
+        The <code>-</code> operator subtracts the second value from the first.
+      </p>
+      <div class="code-block">
+        <pre><code class="language-c">int a = 10, b = 4;
+int diff = a - b;
+printf("Difference: %d\n", diff); // Output: Difference: 6</code></pre>
+      </div>
+
+      <h4 class="mt-4">3. Multiplication (<code>*</code>)</h4>
+      <p>The <code>*</code> operator multiplies two values.</p>
+      <div class="code-block">
+        <pre><code class="language-c">int x = 6, y = 7;
+int product = x * y;
+printf("Product: %d\n", product); // Output: Product: 42</code></pre>
+      </div>
+
+      <h4 class="mt-4">4. Division (<code>/</code>)</h4>
+      <p>
+        The <code>/</code> operator divides the first value by the second. Note
+        that integer division discards the remainder.
+      </p>
+      <div class="code-block">
+        <pre><code class="language-c">int a = 20, b = 4;
+int result = a / b;
+printf("Quotient: %d\n", result); // Output: Quotient: 5</code></pre>
+      </div>
+
+      <h4 class="mt-4">5. Modulus (<code>%</code>)</h4>
+      <p>
+        The <code>%</code> operator gives the remainder of a division operation.
+      </p>
+      <div class="code-block">
+        <pre><code class="language-c">int a = 10, b = 3;
+int mod = a % b;
+printf("Remainder: %d\n", mod); // Output: Remainder: 1</code></pre>
+      </div>
+
+      <button
+        class="btn btn-outline-info mt-4"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#tips"
+      >
+        View Learning Tips
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../home.html">Modules</a></li>
-          <li class="nav-item" id="progressLink" style="display: none;"><a class="nav-link" href="../progress.html">Progress</a></li>
-          <li class="nav-item" id="loginLink" style="display: none;"><a class="nav-link" href="../login.html">Login</a></li>
-          <li class="nav-item" id="profileLink" style="display: none;">
-            <a class="nav-link" href="../profile.html">
-              <img src="" alt="Profile" id="profilePicNav" class="rounded-circle" style="height: 40px; width: 40px" />
-            </a>
-          </li>
-        </ul>
+      <div class="collapse mt-3" id="tips">
+        <div class="card card-body">
+          Remember operator precedence (like multiplication before addition) to
+          avoid logic errors. Use parentheses for clarity.
+        </div>
       </div>
     </div>
-  </nav>
 
-  <div class="container my-5">
-    <h2 class="mb-4">Operator Operand and Arithmetic</h2>
-    <p>Understand operators, operands, and how arithmetic expressions work in C.</p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+        const progressLink = document.getElementById("progressLink");
+        const loginLink = document.getElementById("loginLink");
+        const profileLink = document.getElementById("profileLink");
+        const profilePicNav = document.getElementById("profilePicNav");
 
-    <h4>Example</h4>
-    <div class="code-block"><pre><code class="language-c">#include <stdio.h>
+        if (isLoggedIn) {
+          progressLink.style.display = "block";
+          profileLink.style.display = "block";
+          loginLink.style.display = "none";
 
-int main() {
-    int a = 10, b = 5;
-    printf("Sum: %d\n", a + b);
-    printf("Difference: %d\n", a - b);
-    printf("Product: %d\n", a * b);
-    printf("Quotient: %d\n", a / b);
-    return 0;
-}</code></pre></div>
-
-    <button class="btn btn-outline-info mt-4" type="button" data-bs-toggle="collapse" data-bs-target="#tips">View Learning Tips</button>
-    <div class="collapse mt-3" id="tips">
-      <div class="card card-body">Remember operator precedence (like multiplication before addition) to avoid logic errors.</div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const isLoggedIn = localStorage.getItem("loggedIn") === "true";
-      const progressLink = document.getElementById("progressLink");
-      const loginLink = document.getElementById("loginLink");
-      const profileLink = document.getElementById("profileLink");
-      const profilePicNav = document.getElementById("profilePicNav");
-
-      if (isLoggedIn) {
-        progressLink.style.display = "block";
-        profileLink.style.display = "block";
-        loginLink.style.display = "none";
-
-        const storedPic = localStorage.getItem("profilePic");
-        profilePicNav.src = !storedPic || storedPic.trim() === ""
-          ? "https://cdn-icons-png.flaticon.com/512/847/847969.png"
-          : storedPic;
-      } else {
-        progressLink.style.display = "none";
-        profileLink.style.display = "none";
-        loginLink.style.display = "block";
-      }
-    });
-  </script>
-</body>
+          const storedPic = localStorage.getItem("profilePic");
+          profilePicNav.src =
+            !storedPic || storedPic.trim() === ""
+              ? "https://cdn-icons-png.flaticon.com/512/847/847969.png"
+              : storedPic;
+        } else {
+          progressLink.style.display = "none";
+          profileLink.style.display = "none";
+          loginLink.style.display = "block";
+        }
+      });
+    </script>
+  </body>
 </html>
